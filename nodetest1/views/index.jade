@@ -1,40 +1,236 @@
 extends layout
 
 block content
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+	<div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	<span class="sr-only">Toggle navigation</span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" href="#">CSULA 594: Big Data</a>
+	</div>
+	<div id="navbar" class="navbar-collapse collapse">
+	<ul class="nav navbar-nav navbar-right">
+	<li><a href="#">Dashboard</a></li>
+	<li><a href="#">Settings</a></li>
+	<li><a href="#">Profile</a></li>
+	<li><a href="#">Help</a></li>
+	</ul>
+	<form class="navbar-form navbar-right">
+	<input type="text" class="form-control" placeholder="Search...">
+	</form>
+	</div>
+	</div>
+	</nav>
 	.container
+		<div class="col-sm-3 col-md-2 sidebar">
+		<ul class="nav nav-sidebar">
+		<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+		<li><a href="#">Reports</a></li>
+		<li><a href="#">Analytics</a></li>
+		<li><a href="#">Export</a></li>
+		</ul>
+		</ul>
+		</ul>
+		</div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		h1= 'Lifetime of a news story'
-		<p style='text-align:center;'> Welcome to our project </p>
+		<p style='text-align:center;'> by: Will Klein, Laura Mann and Alex Nassif </p>
+		hr
+		.jumbotron
+			p
+				Compiled Compiled below are the results of our project on over a half million tweets involving the listed news stories.  The data visualations show the total number of tweets by hour over a ten day period.  Additionally, we've included a break down by day and night that provides a platform for a different kind of anaylsis then we orginally set out to prove.  For example, the peak in the day time graph of deflatgate are about 3x the size of the peak in the night time.  
+			p
+				Our Our 
+		hr
+		h1= 'Data'
+		hr
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+		<h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		Collapsible Deflategate
+		</a>
+		</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		<div class="panel-body" style="background-color:black;">
 		.row
-			.col-lg-4
-				h2= 'Deflatgate'
-				p
-					This is all the data plots for deflatgate
-				<img src="images/bradyAll.png" class="img-responsive img-rounded" alt="all brady">
-			.col-lg-4
-				h2= 'Deflatgate daytime tweets'
-				p
-					All the daytime data for deflatgate
-				<img src="images/bradyDay.png" class="img-responsive img-rounded" alt="day brady">
-			.col-lg-4
-				h2= 'Deflatgate nighttime tweets'
-				p
-					All the daytime data for deflatgate
-				<img src="images/bradyNight.png" class="img-responsive img-rounded" alt="night brady">
-		.row
-			.col-lg-4
-				h2= 'News Story One'
-				p
-					This is all the data plots for deflatgate
-				<img src="images/bradyAll.png" class="img-responsive img-rounded" alt="all brady">
-			.col-lg-4
-				h2= 'Deflatgate daytime tweets'
-				p
-					All the daytime data for deflatgate
-				<img src="images/bradyDay.png" class="img-responsive img-rounded" alt="day brady">
-			.col-lg-4
-				h2= 'Deflatgate nighttime tweets'
-				p
-					All the daytime data for deflatgate
-				<img src="images/bradyDay.png" class="img-responsive img-rounded" alt="night brady">
+					.col-lg-4
+						h2= 'Deflatgate'
+						p
+							This is all the data plots for <a href="http://www.nytimes.com/aponline/2015/05/07/sports/football/ap-fbn-deflated-footballs-brady.html" target="_blank">deflatgate</a>
+						<img src="images/bradyAll.png" class="img-responsive img-rounded" alt="all brady">
+					.col-lg-4
+						h2= 'Deflatgate daytime tweets'
+						p
+							All the daytime data for deflatgate
+						<img src="images/bradyDay.png" class="img-responsive img-rounded" alt="day brady">
+					.col-lg-4
+						h2= 'Deflatgate nighttime tweets'
+						p
+							All the daytime data for deflatgate
+						<img src="images/bradyNight.png" class="img-responsive img-rounded" alt="night brady">
+		</div>
+		</div>
+		</div>
 		
+		<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingTwo">
+		<h4 class="panel-title">
+		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		Collapsible Libya
+		</a>
+		</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		<div class="panel-body" style="background-color:black;">
+		.row
+					.col-lg-4
+						h2= 'Libya'
+						p
+							This is all the data plots for <a href="http://www.bloomberg.com/news/articles/2015-05-11/turkish-ship-attacked-off-libya-s-tobruk-foreign-ministry" target="_blank">Libya</a>
+						<img src="images/libyaAll.png" class="img-responsive img-rounded" alt="all libya">
+					.col-lg-4
+						h2= 'Libya daytime tweets'
+						p
+							All the daytime data for Libya
+						<img src="images/libyaDay.png" class="img-responsive img-rounded" alt="day libya">
+					.col-lg-4
+						h2= 'Libya nighttime tweets'
+						p
+							All the daytime data for Libya
+						<img src="images/libyaNight.png" class="img-responsive img-rounded" alt="night libya">
+		</div>
+		</div>
+		</div>
+		
+		<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingThree">
+		<h4 class="panel-title">
+		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		Collapsible Grandma
+		</a>
+		</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		<div class="panel-body" style="background-color:black;">
+		.row
+					.col-lg-4
+						h2= 'Grandma'
+						p
+							This is all the data plots for the <a href="http://www.montgomeryadvertiser.com/story/news/crime/2015/05/11/ala-grandma-to-get-life-or-death-in-girls-running-death/27104979/">grandmother</a> that ran her grandchild to death
+						<img src="images/GAll.png" class="img-responsive img-rounded" alt="all G">
+					.col-lg-4
+						h2= 'Grandma daytime tweets'
+						p
+							All the daytime data for the grandmother that ran her grandchild to death
+						<img src="images/GDay.png" class="img-responsive img-rounded" alt="day G">
+					.col-lg-4
+						h2= 'Grandma nighttime tweets'
+						p
+							All the nighttime data for the grandmother that ran her grandchild to death
+						<img src="images/GNight.png" class="img-responsive img-rounded" alt="night G">
+		</div>
+		</div>
+		</div>
+		
+		<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingFour">
+		<h4 class="panel-title">
+		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		Collapsible Shell Drilling Arctic 
+		</a>
+		</h4>
+		</div>
+		<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+		<div class="panel-body" style="background-color:black;">
+		.row
+					.col-lg-4
+						h2= 'Shell'
+						p
+							This is all the data plots for the <a href="http://www.wsj.com/articles/u-s-government-conditionally-approves-shell-arctic-drilling-plan-1431367773" target="_blank">Shell Arctic</a> drilling story.
+						<img src="images/shell.png" class="img-responsive img-rounded" alt="all shell">
+					.col-lg-4
+						h2= 'Shell daytime tweets'
+						p
+							All the daytime data for the Arctic drilling story.
+						<img src="images/shellDay.png" class="img-responsive img-rounded" alt="day shell">
+					.col-lg-4
+						h2= 'Shell nighttime tweets'
+						p
+							All the nighttime data for the Arctic drilling story.
+						<img src="images/shellNight.png" class="img-responsive img-rounded" alt="night shell">
+		</div>
+		</div>
+		</div>
+		
+		<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingFive">
+		<h4 class="panel-title">
+		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+		Collapsible Nebraska Prison
+		</a>
+		</h4>
+		</div>
+		<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+		<div class="panel-body" style="background-color:black;">
+		.row
+					.col-lg-4
+						h2= 'Nebraska Prison'
+						p
+							This is all the data plots for the <a href="http://www.nytimes.com/2015/05/12/us/nebraska-prison-riot.html" target="_blank">Nebraska prison</a> riot.
+						<img src="images/NPAll.png" class="img-responsive img-rounded" alt="all NP">
+					.col-lg-4
+						h2= 'Nebraska Prison daytime tweets'
+						p
+							All the daytime data for the Nebraska prison riot.
+						<img src="images/NPDay.png" class="img-responsive img-rounded" alt="day NP">
+					.col-lg-4
+						h2= 'Nebraska nighttime tweets'
+						p
+							All the nighttime data for the Nebraska prison riot.
+						<img src="images/NPNight.png" class="img-responsive img-rounded" alt="night NP">
+		</div>
+		</div>
+		</div>
+		
+		<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingSix">
+		<h4 class="panel-title">
+		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+		Collapsible Typhoid
+		</a>
+		</h4>
+		</div>
+		<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+		<div class="panel-body" style="background-color:black;">
+		.row
+					.col-lg-4
+						h2= 'Typhoid'
+						p
+							This is all the data plots for the resistant <a href="http://www.bbc.com/news/health-32687312" target="_blank">Typhoid</a> strain.
+						<img src="images/tAll.png" class="img-responsive img-rounded" alt="all">
+					.col-lg-4
+						h2= 'Typhoid daytime tweets'
+						p
+							All the daytime data for the Nebraska prison riot.
+						<img src="images/tDay.png" class="img-responsive img-rounded" alt="day">
+					.col-lg-4
+						h2= 'Typhoid nighttime tweets'
+						p
+							All the nighttime data for the Nebraska prison riot.
+						<img src="images/tNight.png" class="img-responsive img-rounded" alt="night">
+		</div>
+		</div>
+		</div>
+		</div>
+		hr
+		h1= 'Conclusions'
+		hr
+		</div>
 			
