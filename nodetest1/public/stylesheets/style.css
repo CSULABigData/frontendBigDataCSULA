@@ -6,6 +6,10 @@ body {
 .popover {
     max-width: 1000px !important;
 }
+.jumbotron {
+background-image: url("../images/background.jpg");
+/*background-size: cover;*/
+}
 
 h1 {
 	font-size: 5em !important;
